@@ -12,13 +12,14 @@
 let counterValue = 0;
 const minus = document.querySelector('button[data-action="decrement"]');
 const plus = document.querySelector('button[data-action="increment"]');
+const text = document.querySelector("#value");
 
 minus.addEventListener('click', () => {
   counterValue -= 1;
-  document.querySelector("#value").textContent = `${counterValue}`;
+  text.textContent = `${counterValue}`;
 })
 plus.addEventListener('click', () => {
   counterValue += 1;
-  document.querySelector("#value").textContent = `${counterValue}`;
+  text.textContent = `${counterValue}`;
 })
 

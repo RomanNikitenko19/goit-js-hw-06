@@ -28,11 +28,7 @@ formRef.addEventListener('submit', (e) => {
   e.preventDefault();
   const { email, password } = e.currentTarget.elements;
 
-  if (!email.value) {
-    alert("все поля должны быть заполнены");
-    return
-  }
-  if (!password.value) {
+  if (!email.value || !password.value) {
     alert("все поля должны быть заполнены");
     return;
   }

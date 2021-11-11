@@ -3,23 +3,56 @@
 // Посчитает и выведет в консоль количество категорий в ul#categories, то есть элементов li.item.
 // Для каждого элемента li.item в списке ul#categories, найдет и выведет в консоль текст заголовка элемента (тега <h2>) и количество элементов в категории (всех вложенных в него <li>).
 // В результате, в консоли будут выведены такие сообщения.
+{/* <ul id="categories">
+  <li class="item">
+    <h2>Animals</h2>
+    <ul>
+      <li>Cat</li>
+      <li>Hamster</li>
+      <li>Horse</li>
+      <li>Parrot</li>
+    </ul>
+  </li>
+  <li class="item">
+    <h2>Products</h2>
+    <ul>
+      <li>Bread</li>
+      <li>Prasley</li>
+      <li>Cheese</li>
+    </ul>
+  </li>
+  <li class="item">
+    <h2>Technologies</h2>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>React</li>
+      <li>Node.js</li>
+    </ul>
+  </li>
+</ul>; */}
 
-const listWithId = document.getElementById("categories");
-const listСategories = listWithId.children;
+const listCategories = document.querySelector("#categories");
+console.log(`Number of categories: ${listCategories.children.length}`);
 
-console.log(`Number of categories ${listСategories.length}`);
+const liItemNumberOne = listCategories.firstElementChild;//li
+const firstTitle = liItemNumberOne.firstElementChild;//h2
+console.log(`Category: ${firstTitle.textContent}`);
 
-const listHeadings = document.querySelectorAll("h2");
+const ulFirst = firstTitle.nextElementSibling;//ul
+console.log(`Elements: ${ulFirst.children.length}`);
 
-console.log(`Category: ${listHeadings[0].textContent}`);
-const fitstList = listHeadings[0].nextElementSibling.children;
-console.log(`Elements: ${fitstList.length}`);
+const liItemNumberTwo = liItemNumberOne.nextElementSibling;//li
+const secondTitle = liItemNumberTwo.firstElementChild;//h2
+console.log(`Category: ${secondTitle.textContent}`);
 
-console.log(`Category: ${listHeadings[1].textContent}`);
-const secondList = listHeadings[1].nextElementSibling.children;
-console.log(`Elements: ${secondList.length}`);
+const ulSecond = secondTitle.nextElementSibling;//ul
+console.log(`Elements: ${ulSecond.children.length}`);
 
-console.log(`Category: ${listHeadings[2].textContent}`);
-const thirdList = listHeadings[2].nextElementSibling.children;
-console.log(`Elements: ${thirdList.length}`);
+const liItemNumberThree = listCategories.lastElementChild;//li
+const thirdTitle = liItemNumberThree.firstElementChild;//h2
+console.log(`Category: ${thirdTitle.textContent}`);
 
+const ulThird = thirdTitle.nextElementSibling;//ul
+console.log(`Elements: ${ulThird.children.length}`);
