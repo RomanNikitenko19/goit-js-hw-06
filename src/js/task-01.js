@@ -34,25 +34,31 @@
 </ul>; */}
 
 const listCategories = document.querySelector("#categories");
-console.log(`Number of categories: ${listCategories.children.length}`);
+const allItem = listCategories.children;
+console.log(`Number of categories: ${allItem.length}`);
+[...allItem].forEach((li) => {
+  console.log(`Category: ${li.firstElementChild.textContent}`);
+  console.log(`Elements: ${li.querySelectorAll('li').length}`);
+});
 
-const liItemNumberOne = listCategories.firstElementChild;//li
-const firstTitle = liItemNumberOne.firstElementChild;//h2
-console.log(`Category: ${firstTitle.textContent}`);
+//error !!!
+// const liItemNumberOne = listCategories.firstElementChild;//li
+// const firstTitle = liItemNumberOne.firstElementChild;//h2
+// console.log(`Category: ${firstTitle.textContent}`);
 
-const ulFirst = firstTitle.nextElementSibling;//ul
-console.log(`Elements: ${ulFirst.children.length}`);
+// const ulFirst = firstTitle.nextElementSibling;//ul
+// console.log(`Elements: ${ulFirst.children.length}`);
 
-const liItemNumberTwo = liItemNumberOne.nextElementSibling;//li
-const secondTitle = liItemNumberTwo.firstElementChild;//h2
-console.log(`Category: ${secondTitle.textContent}`);
+// const liItemNumberTwo = liItemNumberOne.nextElementSibling;//li
+// const secondTitle = liItemNumberTwo.firstElementChild;//h2
+// console.log(`Category: ${secondTitle.textContent}`);
 
-const ulSecond = secondTitle.nextElementSibling;//ul
-console.log(`Elements: ${ulSecond.children.length}`);
+// const ulSecond = secondTitle.nextElementSibling;//ul
+// console.log(`Elements: ${ulSecond.children.length}`);
 
-const liItemNumberThree = listCategories.lastElementChild;//li
-const thirdTitle = liItemNumberThree.firstElementChild;//h2
-console.log(`Category: ${thirdTitle.textContent}`);
+// const liItemNumberThree = listCategories.lastElementChild;//li
+// const thirdTitle = liItemNumberThree.firstElementChild;//h2
+// console.log(`Category: ${thirdTitle.textContent}`);
 
-const ulThird = thirdTitle.nextElementSibling;//ul
-console.log(`Elements: ${ulThird.children.length}`);
+// const ulThird = thirdTitle.nextElementSibling;//ul
+// console.log(`Elements: ${ulThird.children.length}`);
